@@ -1,0 +1,260 @@
+[gd_scene load_steps=26 format=3 uid="uid://rukmoa0i5xkl"]
+
+[ext_resource type="Script" path="res://main_menu_.gd" id="1_ittqh"]
+[ext_resource type="Texture2D" uid="uid://c2lvfxavpe0tj" path="res://sky.png" id="1_rxhae"]
+[ext_resource type="Texture2D" uid="uid://w8t6qen564ac" path="res://Untitled240_20241104192220.png" id="2_2vk15"]
+[ext_resource type="Texture2D" uid="uid://cxdjoyditmfqa" path="res://file (4).png" id="3_2udcd"]
+[ext_resource type="Texture2D" uid="uid://bbme77owttto4" path="res://stick - Copy.png" id="3_ce1xi"]
+[ext_resource type="Texture2D" uid="uid://dd80b18j5nggu" path="res://87053cf3-0ef7-4883-92e6-9e343be029cc.jpg" id="3_ejabc"]
+[ext_resource type="Texture2D" uid="uid://d0ej64fkcyb50" path="res://Untitled48_20241128120556.png" id="4_m8fmu"]
+[ext_resource type="Texture2D" uid="uid://g0hxtaoxler7" path="res://playbutton.png" id="4_vn0ir"]
+[ext_resource type="Texture2D" uid="uid://dmj2t2axbhgyd" path="res://settingsbutton - Copy.png" id="5_bkqlj"]
+[ext_resource type="Texture2D" uid="uid://v118mlr2bs4f" path="res://exitbutton .png" id="6_21v0u"]
+[ext_resource type="Texture2D" uid="uid://bm3qkri7d1vp0" path="res://Remove background project (1).png" id="7_pcah8"]
+[ext_resource type="Texture2D" uid="uid://clntqrljdu2wy" path="res://Remove background project.png" id="8_ey0iw"]
+[ext_resource type="Script" path="res://animation_player.gd" id="9_h2dsm"]
+[ext_resource type="Script" path="res://title.gd" id="12_xqarf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f63y4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3wpne"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ia7qn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_53y4q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wghp5"]
+
+[sub_resource type="Animation" id="Animation_ht5yg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sky/Title:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(324.727, 1025.59)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Sky/TITLE BACKGROUND:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(299.816, -1006.51)]
+}
+
+[sub_resource type="Animation" id="Animation_ufl8b"]
+resource_name = "title"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sky/Title:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 3.03333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(324.727, 1025.59), Vector2(317.609, -288.596), Vector2(285.581, -295.751)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Sky/TITLE BACKGROUND:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(299.816, -1006.51), Vector2(299.816, -384)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2vwgh"]
+_data = {
+"RESET": SubResource("Animation_ht5yg"),
+"title": SubResource("Animation_ufl8b")
+}
+
+[sub_resource type="Animation" id="Animation_cm4gv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Untitled24020241104192220:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(933.255, -465.093)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-975.958, -751.304)]
+}
+
+[sub_resource type="Animation" id="Animation_nw71e"]
+resource_name = "clouds"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Untitled24020241104192220:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.133333, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(933.255, -465.093), Vector2(-1374.53, -374.46)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1205.49, -465.093), Vector2(655.68, -372.075)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cbqyv"]
+_data = {
+"RESET": SubResource("Animation_cm4gv"),
+"clouds": SubResource("Animation_nw71e")
+}
+
+[node name="main menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ittqh")
+
+[node name="Sky" type="Sprite2D" parent="."]
+position = Vector2(576.5, 327)
+scale = Vector2(0.562012, 0.419271)
+texture = ExtResource("1_rxhae")
+
+[node name="File(4)" type="Sprite2D" parent="Sky"]
+position = Vector2(52.4901, 97.7887)
+scale = Vector2(1.05647, 0.92236)
+texture = ExtResource("3_2udcd")
+
+[node name="Untitled24020241104192220" type="Sprite2D" parent="Sky"]
+position = Vector2(933.255, -465.093)
+scale = Vector2(0.879236, 0.875776)
+texture = ExtResource("2_2vk15")
+
+[node name="Untitled24020241104192221" type="Sprite2D" parent="Sky"]
+position = Vector2(-975.958, -751.304)
+scale = Vector2(1.00738, 0.720497)
+texture = ExtResource("2_2vk15")
+
+[node name="TITLE BACKGROUND" type="Sprite2D" parent="Sky"]
+position = Vector2(299.816, -1006.51)
+scale = Vector2(2.93287, 0.808313)
+texture = ExtResource("3_ejabc")
+
+[node name="Title" type="Sprite2D" parent="Sky"]
+position = Vector2(324.727, 1025.59)
+scale = Vector2(0.910165, 0.959627)
+texture = ExtResource("4_m8fmu")
+
+[node name="Stick-Copy" type="Sprite2D" parent="Sky"]
+position = Vector2(-700.163, 145.491)
+rotation = -0.302367
+scale = Vector2(0.326362, 1.04718)
+texture = ExtResource("3_ce1xi")
+
+[node name="play" type="Button" parent="Sky"]
+offset_left = -885.0
+offset_top = -596.0
+offset_right = -467.0
+offset_bottom = -98.0
+focus_mode = 0
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_f63y4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3wpne")
+action_mode = 0
+icon = ExtResource("4_vn0ir")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="settings" type="Button" parent="Sky"]
+offset_left = -853.185
+offset_top = -119.255
+offset_right = -515.185
+offset_bottom = 274.745
+focus_mode = 0
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_ia7qn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_53y4q")
+action_mode = 0
+icon = ExtResource("5_bkqlj")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="exit" type="Button" parent="Sky"]
+offset_left = -851.406
+offset_top = 298.137
+offset_right = -547.406
+offset_bottom = 647.137
+focus_mode = 0
+theme_override_icons/icon = ExtResource("6_21v0u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wghp5")
+action_mode = 0
+icon = ExtResource("6_21v0u")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="RemoveBackgroundProject(1)" type="Sprite2D" parent="."]
+position = Vector2(851, 575)
+scale = Vector2(0.425, 0.446094)
+texture = ExtResource("7_pcah8")
+
+[node name="RemoveBackgroundProject" type="Sprite2D" parent="."]
+position = Vector2(724, 436)
+scale = Vector2(0.467187, 0.375781)
+texture = ExtResource("8_ey0iw")
+
+[node name="title" type="AnimationPlayer" parent="."]
+root_node = NodePath("../cloud")
+libraries = {
+"": SubResource("AnimationLibrary_2vwgh")
+}
+script = ExtResource("12_xqarf")
+
+[node name="cloud" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sky/Untitled24020241104192221")
+libraries = {
+"": SubResource("AnimationLibrary_cbqyv")
+}
+speed_scale = 0.256
+script = ExtResource("9_h2dsm")
+
+[connection signal="pressed" from="Sky/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Sky/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Sky/exit" to="." method="_on_exit_pressed"]

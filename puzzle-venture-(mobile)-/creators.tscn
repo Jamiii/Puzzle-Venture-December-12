@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://d4eecl6ufyqr7"]
+
+[ext_resource type="Script" path="res://creators.gd" id="1_gg2ye"]
+[ext_resource type="Texture2D" uid="uid://c63tiefefb4m2" path="res://2024_11_14_00f_Kleki (1).png" id="2_pf3d7"]
+[ext_resource type="Texture2D" uid="uid://c3yq14jmt4lps" path="res://backbutton.png" id="3_bvemv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ej6e1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x6u3w"]
+
+[sub_resource type="SystemFont" id="SystemFont_4i7fq"]
+font_names = PackedStringArray("Impact")
+
+[node name="CREATORS" type="Node2D"]
+script = ExtResource("1_gg2ye")
+
+[node name="2024111400fKleki(1)" type="Sprite2D" parent="."]
+position = Vector2(573.25, 322.25)
+scale = Vector2(0.864936, 0.857992)
+texture = ExtResource("2_pf3d7")
+
+[node name="back" type="Button" parent="."]
+offset_left = 20.0
+offset_top = 10.0
+offset_right = 133.0
+offset_bottom = 115.0
+focus_mode = 0
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_ej6e1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_x6u3w")
+icon = ExtResource("3_bvemv")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 192.0
+offset_top = 300.0
+offset_right = 500.0
+offset_bottom = 429.0
+theme_override_colors/font_color = Color(0.843521, 0.593747, 0.255547, 1)
+theme_override_colors/font_shadow_color = Color(0.436042, 0.297695, 0.110734, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = SubResource("SystemFont_4i7fq")
+theme_override_font_sizes/font_size = 30
+text = "JAMILLA KASSANDRA CRUZ 
+     - Game Developer-
+        -  Story Author - "
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 717.0
+offset_top = 294.0
+offset_right = 1008.0
+offset_bottom = 435.0
+theme_override_colors/font_color = Color(0.843521, 0.593747, 0.255547, 1)
+theme_override_colors/font_shadow_color = Color(0.436042, 0.297695, 0.110734, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = SubResource("SystemFont_4i7fq")
+theme_override_font_sizes/font_size = 31
+text = "EIRON JUSTIN QUINDARA 
+ - Graphics (Drawings) -"
+vertical_alignment = 1
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://b6u1xsd5yt26i"]
+
+[ext_resource type="Script" path="res://map.gd" id="1_k36wi"]
+[ext_resource type="Texture2D" uid="uid://ci51gs3o8lkor" path="res://245beb04-9ce5-448f-b0bf-c03d1e659648.jpg" id="1_w8j6w"]
+[ext_resource type="Texture2D" uid="uid://c7d1sksc0w4v6" path="res://Untitled252_20241115065210.png" id="2_sy4bk"]
+[ext_resource type="Texture2D" uid="uid://c3yq14jmt4lps" path="res://backbutton.png" id="4_o2uwg"]
+
+[sub_resource type="SystemFont" id="SystemFont_brckm"]
+font_names = PackedStringArray("Fantasy")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1h3at"]
+
+[node name="map" type="Node2D"]
+script = ExtResource("1_k36wi")
+
+[node name="245Beb04-9Ce5-448f-b0Bf-c03d1e659648" type="Sprite2D" parent="."]
+position = Vector2(573.5, 325.5)
+scale = Vector2(0.899219, 0.507031)
+texture = ExtResource("1_w8j6w")
+
+[node name="Untitled25220241115065210" type="Sprite2D" parent="."]
+position = Vector2(581, 341)
+scale = Vector2(0.411621, 0.308594)
+texture = ExtResource("2_sy4bk")
+
+[node name="level 1" type="Button" parent="."]
+offset_left = 247.0
+offset_top = 165.0
+offset_right = 418.0
+offset_bottom = 307.0
+focus_mode = 0
+theme_override_colors/font_pressed_color = Color(0.813292, 0.405153, 0.86492, 1)
+theme_override_colors/font_color = Color(0.0767562, 0.0181395, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_brckm")
+theme_override_font_sizes/font_size = 18
+text = "
+
+
+
+
+
+LEVEL 1 "
+flat = true
+
+[node name="back to main" type="Button" parent="level 1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.444
+anchor_top = -1.169
+anchor_right = -1.444
+anchor_bottom = -1.169
+offset_left = 22.924
+offset_top = 10.998
+offset_right = 130.924
+offset_bottom = 120.998
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1h3at")
+icon = ExtResource("4_o2uwg")
+flat = true
+expand_icon = true
+
+[connection signal="pressed" from="level 1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="level 1/back to main" to="." method="_on_back_to_main_pressed"]

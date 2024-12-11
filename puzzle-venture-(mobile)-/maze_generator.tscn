@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cthbrye6ibpkc"]
+
+[ext_resource type="Script" path="res://node_2d.gd" id="1_6g3d7"]
+[ext_resource type="Script" path="res://area_2d.gd" id="2_jatyb"]
+[ext_resource type="Texture2D" uid="uid://tvjsb6u3p5ls" path="res://player.png" id="3_cik4a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rosk3"]
+
+[node name="MazeGenerator" type="Node2D"]
+script = ExtResource("1_6g3d7")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_jatyb")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-3, -9.99999)
+scale = Vector2(0.167969, 0.147266)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rosk3")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(1.24999, -2.87501)
+scale = Vector2(0.161328, 0.136133)
+texture = ExtResource("3_cik4a")

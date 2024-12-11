@@ -1,0 +1,89 @@
+[gd_scene load_steps=5 format=3 uid="uid://bin2de3oplwdm"]
+
+[ext_resource type="Script" path="res://level_1_(general_questions).gd" id="1_nr0bd"]
+[ext_resource type="Texture2D" uid="uid://c2lvfxavpe0tj" path="res://sky.png" id="2_viucc"]
+[ext_resource type="Texture2D" uid="uid://c3yq14jmt4lps" path="res://backbutton.png" id="3_7epmx"]
+[ext_resource type="Texture2D" uid="uid://dd80b18j5nggu" path="res://87053cf3-0ef7-4883-92e6-9e343be029cc.jpg" id="4_2djtf"]
+
+[node name="level 1 (general questions)" type="Node2D"]
+script = ExtResource("1_nr0bd")
+
+[node name="Sky" type="Sprite2D" parent="."]
+position = Vector2(581.25, 327.5)
+scale = Vector2(0.561279, 0.422526)
+texture = ExtResource("2_viucc")
+
+[node name="back" type="Button" parent="Sky"]
+offset_left = -1009.0
+offset_top = -770.0
+offset_right = -771.0
+offset_bottom = -469.0
+icon = ExtResource("3_7epmx")
+flat = true
+expand_icon = true
+
+[node name="87053Cf3-0Ef7-4883-92e6-9e343Be029Cc" type="Sprite2D" parent="."]
+position = Vector2(569, 215)
+scale = Vector2(1.68856, 0.445704)
+texture = ExtResource("4_2djtf")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 204.0
+offset_top = 144.0
+offset_right = 943.0
+offset_bottom = 275.0
+theme_override_colors/font_color = Color(0.0584983, 0.0279963, 0.000799608, 1)
+theme_override_font_sizes/font_size = 46
+text = "Power Supply Unit (PSU):
+ What is the PSU's main function?
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WRONG" type="Button" parent="Label"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 212.0
+offset_right = 324.0
+offset_bottom = 318.0
+text = "A. Cool the CPU"
+
+[node name="CORRECT" type="Button" parent="Label"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 345.0
+offset_right = 326.0
+offset_bottom = 451.0
+text = "B. Provide power to components"
+
+[node name="WRONG2" type="Button" parent="Label"]
+layout_mode = 0
+offset_left = 370.0
+offset_top = 214.0
+offset_right = 676.0
+offset_bottom = 320.0
+text = "C. Manage data transfer"
+
+[node name="WRONG 3" type="Button" parent="Label"]
+layout_mode = 0
+offset_left = 370.0
+offset_top = 345.0
+offset_right = 676.0
+offset_bottom = 451.0
+text = "D. Store data"
+
+[node name="LEVEL 1" type="Label" parent="Label/WRONG 3"]
+layout_mode = 0
+offset_left = -144.0
+offset_top = -461.0
+offset_right = 122.0
+offset_bottom = -391.0
+theme_override_font_sizes/font_size = 51
+text = "LEVEL 1"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Sky/back" to="." method="_on_button_pressed"]
+[connection signal="button_up" from="Label/WRONG" to="." method="_on_a_button_up"]
+[connection signal="pressed" from="Label/CORRECT" to="." method="_on_correct_pressed"]
+[connection signal="pressed" from="Label/WRONG2" to="." method="_on_wrong_2_pressed"]
+[connection signal="pressed" from="Label/WRONG 3" to="." method="_on_wrong_3_pressed"]

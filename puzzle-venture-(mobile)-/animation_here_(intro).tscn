@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://csd0ipf5jvtwg"]
+
+[ext_resource type="Script" path="res://animation_here_(intro).gd" id="1_iff2s"]
+[ext_resource type="Texture2D" uid="uid://c3yq14jmt4lps" path="res://backbutton.png" id="2_4fxbg"]
+
+[node name="intro animation here (intro)" type="Node2D"]
+script = ExtResource("1_iff2s")
+
+[node name="back" type="Button" parent="."]
+offset_right = 125.0
+offset_bottom = 128.0
+focus_mode = 0
+icon = ExtResource("2_4fxbg")
+flat = true
+expand_icon = true
+
+[node name="skp" type="Button" parent="back"]
+layout_mode = 0
+offset_left = 826.0
+offset_top = 507.0
+offset_right = 1136.0
+offset_bottom = 633.0
+theme_override_font_sizes/font_size = 86
+text = "SKIP >>"
+flat = true
+
+[connection signal="pressed" from="back" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="back/skp" to="." method="_on_skp_pressed"]

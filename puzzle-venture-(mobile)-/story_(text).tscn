@@ -1,0 +1,102 @@
+[gd_scene load_steps=9 format=3 uid="uid://b3c4lt5v67j3h"]
+
+[ext_resource type="Script" path="res://story_(text).gd" id="1_p73ma"]
+[ext_resource type="Texture2D" uid="uid://dd80b18j5nggu" path="res://87053cf3-0ef7-4883-92e6-9e343be029cc.jpg" id="2_pt6d7"]
+[ext_resource type="Script" path="res://animation_player.gd" id="3_ddmqf"]
+
+[sub_resource type="SystemFont" id="SystemFont_hffjs"]
+font_names = PackedStringArray("Cursive")
+
+[sub_resource type="Animation" id="Animation_jcavu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_nm7wb"]
+resource_name = "mountain level story "
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ad433"]
+_data = {
+"RESET": SubResource("Animation_jcavu"),
+"mountain level story ": SubResource("Animation_nm7wb")
+}
+
+[sub_resource type="SystemFont" id="SystemFont_a2pa6"]
+font_names = PackedStringArray("Jokerman")
+
+[node name="story (text)" type="Node2D"]
+script = ExtResource("1_p73ma")
+
+[node name="87053Cf3-0Ef7-4883-92e6-9e343Be029Cc" type="Sprite2D" parent="."]
+position = Vector2(577.5, 322)
+scale = Vector2(2.43008, 1.54177)
+texture = ExtResource("2_pt6d7")
+
+[node name="RichTextLabel" type="Label" parent="."]
+offset_right = 1151.0
+offset_bottom = 644.0
+theme_override_colors/font_color = Color(0.3915, 0.263494, 0.0616857, 1)
+theme_override_fonts/font = SubResource("SystemFont_hffjs")
+theme_override_font_sizes/font_size = 26
+text = "Andy opened his eyes, groaning as he sat up.
+
+He looked around the place he was currently in.\"Where am I?\" He murmured to himself.
+
+The poor cat was lost, in his mind and in literal sense.
+
+\"Oh right... I got sucked in the game.\"
+
+He stood up.
+
+\"Reminds me of that one movie, Jumanji, was it?\"
+
+He shook his head, he had this determined look on his face.
+
+\"I should focus on finding Ava\""
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="RichTextLabel"]
+libraries = {
+"": SubResource("AnimationLibrary_ad433")
+}
+script = ExtResource("3_ddmqf")
+
+[node name="skip" type="Button" parent="."]
+offset_left = 980.0
+offset_top = 558.0
+offset_right = 1146.0
+offset_bottom = 644.0
+focus_mode = 0
+theme_override_colors/font_color = Color(0.390325, 0.205965, 0.00918455, 1)
+theme_override_fonts/font = SubResource("SystemFont_a2pa6")
+theme_override_font_sizes/font_size = 51
+text = "SKIP >"
+flat = true
+
+[connection signal="pressed" from="skip" to="." method="_on_skip_pressed"]
